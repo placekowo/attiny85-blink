@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "make",
+            "detail": "Run make",
+            "type": "shell",
+            "command": "${input:makeTarget} ",
+            "options": {
+                "env": {}
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ],
+    "inputs": [
+        { 
+            "type": "pickString", 
+            "id": "makeTarget", "description": "Select a build target", 
+            "options": [
+                "make all", "make clean", "make build", "make flash",
+            ],
+            "default": "make all"
+        }
+    ]
+}
