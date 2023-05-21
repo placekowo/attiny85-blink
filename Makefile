@@ -4,7 +4,7 @@ PROGRAMMER = usbasp
 FILENAME   = main
 COMPILE    = avr-gcc -Wall -Os -DF_CPU=$(CLOCK) -mmcu=$(DEVICE)
 
-all: usbip_attach clean build upload
+all: clean build upload
 
 build:
 	$(COMPILE) -c $(FILENAME).c -o $(FILENAME).o
